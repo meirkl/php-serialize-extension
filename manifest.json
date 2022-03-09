@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "PHP Serialize/Unserialize",
+  "version": "1.0.0",
+  "description": "Parse PHP serialized into JSON and JSON into PHP serialized without any data leaving the browser.",
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "PHP Serialize/Unserialize",
+    "default_icon": "icon-128.png"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "php-serialize-extension",
+  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Meir Keller"
+  },
+  "license": "MIT",
+  "keywords": [
+    "php-serialize",
+    "json",
+    "php",
+    "serialize",
+    "unserialize",
+    "deserialize",
+    "chrome",
+    "extension"
+  ],
+  "description": "Parse PHP serialized into JSON and JSON into PHP serialized without any data leaving the browser.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "postbuild": "cp manifest.json icon-128.png ./extension",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "preact": "^10.5.15"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.1.5",
+    "@types/assert": "^1.5.6",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}
