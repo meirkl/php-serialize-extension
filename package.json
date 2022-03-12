@@ -16,7 +16,7 @@
     "chrome",
     "extension"
   ],
-  "description": "Parse PHP serialized into JSON and JSON into PHP serialized without any data leaving the browser.",
+  "description": "Serialize and deserialize PHP-serialized data into JSON without any data leaving the browser.",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
