@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks';
 import { serialize, unserialize, isSerialized } from './php-serialize';
 import Textarea from './textarea';
+import isJSON from './utils/is-json';
 
 export function App() {
     const [inputText, setInputText] = useState('');
@@ -8,9 +9,11 @@ export function App() {
 
     const serializeHandler = () => {
         try {
-            const obj = JSON.parse(inputText);
-            if (!!obj && typeof obj === 'object') {
+            if (isJSON(inputText)) {
+                const obj = JSON.parse(inputText);
                 setResult(serialize(obj));
+            } else {
+                setResult(serialize(inputText));
             }
         } catch (error) {
             console.log(error);
@@ -22,7 +25,11 @@ export function App() {
         try {
             if (isSerialized(inputText)) {
                 const unserialized = unserialize(inputText);
-                setResult(JSON.stringify(unserialized));
+                if (typeof unserialized === 'object') {
+                    setResult(JSON.stringify(unserialized));
+                } else {
+                    setResult(unserialized);
+                }
             }
         } catch (error) {
             console.log(error);
@@ -44,6 +51,7 @@ export function App() {
             <h1>PHP Serialize/Unserialize</h1>
             <div>
                 <Textarea
+                    autoFocus
                     value={inputText}
                     onChange={(e) =>
                         setInputText((e.target as HTMLInputElement).value)
