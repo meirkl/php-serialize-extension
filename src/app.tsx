@@ -48,28 +48,25 @@ export function App() {
 
     return (
         <>
-            <h1>PHP Serialize/Unserialize</h1>
+            <Textarea
+                autoFocus
+                value={inputText}
+                onChange={(e) =>
+                    setInputText((e.target as HTMLInputElement).value)
+                }
+            />
             <div>
-                <Textarea
-                    autoFocus
-                    value={inputText}
-                    onChange={(e) =>
-                        setInputText((e.target as HTMLInputElement).value)
-                    }
-                />
-                <div>
-                    <button onClick={serializeHandler}>Serialize</button>
-                    <button onClick={unserializeHandler}>Unserialize</button>
-                    <button onClick={clearHandler}>Clear</button>
-                    <button onClick={copyToClipboard}>Copy result</button>
-                </div>
-                <Textarea
-                    value={result}
-                    onChange={(e) =>
-                        setResult((e.target as HTMLInputElement).value)
-                    }
-                />
+                <button onClick={serializeHandler}>Serialize</button>
+                <button onClick={unserializeHandler}>Unserialize</button>
+                <button onClick={clearHandler}>Clear</button>
+                <button onClick={copyToClipboard}>Copy result</button>
             </div>
+            <Textarea
+                value={result}
+                onChange={(e) =>
+                    setResult((e.target as HTMLInputElement).value)
+                }
+            />
         </>
     );
 }

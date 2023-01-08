@@ -1,6 +1,6 @@
 /**
  * Check value to find if it was serialized.
- * @param { string } item - Value to check to see if was serialized.
+ * @param { string } givenItem - Value to check to see if was serialized.
  * @param { boolean } strict - Whether to be strict about the end of the string. Default value: false
  */
 export default function isSerialized(
